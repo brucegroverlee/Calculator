@@ -5,7 +5,8 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('starter', [
   'ionic',
-  'starter.controllers'
+  'starter.controllers',
+  'starter.services'
 ])
 
 .run(function($ionicPlatform) {
