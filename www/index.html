@@ -17,6 +17,7 @@
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
   </head>
   <body ng-app="starter">
 
@@ -24,17 +25,17 @@
       <ion-header-bar class="bar-stable">
         <h1 class="title">Calculator</h1>
       </ion-header-bar>
-      <ion-content>
+      <ion-content ng-controller="calculatorCtrl">
         <div class="display-content">
           <label class="item item-input">
-            <input type="text" placeholder="0">
+            <input type="text" placeholder="0" value="{{numberDisplay}}">
           </label>
         </div>
         <div class="buttons-content">
 
           <div class="row">
             <div class="col">
-              <button class="button button-block button-assertive">
+              <button class="button button-block button-assertive" ng-click="clearDisplay()">
                 C
               </button>
             </div>
@@ -57,17 +58,17 @@
 
           <div class="row">
             <div class="col">
-              <button class="button button-block button-positive">
+              <button class="button button-block button-positive" ng-click="addDigit(7)">
                 7
               </button>
             </div>
             <div class="col">
-              <button class="button button-block button-positive">
+              <button class="button button-block button-positive" ng-click="addDigit(8)">
                 8
               </button>
             </div>
             <div class="col">
-              <button class="button button-block button-positive">
+              <button class="button button-block button-positive" ng-click="addDigit(9)">
                 9
               </button>
             </div>
@@ -80,46 +81,46 @@
 
           <div class="row">
             <div class="col">
-              <button class="button button-block button-positive">
+              <button class="button button-block button-positive" ng-click="addDigit(4)">
                 4
               </button>
             </div>
             <div class="col">
-              <button class="button button-block button-positive">
+              <button class="button button-block button-positive" ng-click="addDigit(5)">
                 5
               </button>
             </div>
             <div class="col">
-              <button class="button button-block button-positive">
+              <button class="button button-block button-positive" ng-click="addDigit(6)">
                 6
               </button>
             </div>
             <div class="col">
-              <button class="button button-block button-calm">
-                ^2
+              <button class="button button-block button-balanced">
+                =
               </button>
             </div>
           </div>
 
           <div class="row">
             <div class="col">
-              <button class="button button-block button-positive">
+              <button class="button button-block button-positive" ng-click="addDigit(1)">
                 1
               </button>
             </div>
             <div class="col">
-              <button class="button button-block button-positive">
+              <button class="button button-block button-positive" ng-click="addDigit(2)">
                 2
               </button>
             </div>
             <div class="col">
-              <button class="button button-block button-positive">
+              <button class="button button-block button-positive" ng-click="addDigit(3)">
                 3
               </button>
             </div>
             <div class="col">
-              <button class="button button-block button-balanced">
-                =
+              <button class="button button-block button-positive" ng-click="addDigit(0)">
+                0
               </button>
             </div>
           </div>
