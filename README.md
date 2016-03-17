@@ -165,7 +165,14 @@ Paso
 ```
 git checkout 06
 ```
-####7. Adicionar plataforma android y publicar App en Google Play
+####7. Config.xml
+Acá podemos modificar la información de la aplicación como título, descripción, versión, autor, etc. 
+Para mayor información revisar [Apache Cordova config.xml](http://cordova.apache.org/docs/en/latest/config_ref/index.html)
+Paso
+```
+git checkout 07
+```
+####8. Adicionar plataforma android y publicar App en Google Play
 #####Primero, se adiciona la plataforma que vamos a usar
 ```js
 ionic platform add android
