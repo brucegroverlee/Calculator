@@ -29,6 +29,11 @@ Para efecto del curso continuaremos el proyecto desde el siguiente repositorio d
 ```js
 git clone https://github.com/brucegroverlee/Calculator.git
 ```
+luego, instalamos los paquetes del proyecto
+```js
+cd Calculator
+npm install
+```
 una vez descargado el proyecto, ingresamos en él e ingresamos el siguiente comando en la consola
 ```js
 git checkout 00
@@ -172,7 +177,8 @@ Paso
 ```
 git checkout 07
 ```
-####8. Adicionar plataforma android y publicar App en Google Play
+####8. Adicionar plataforma android y publicar la App en Google Play
+Ref: http://ionicframework.com/docs/guide/publishing.html
 #####Primero, se adiciona la plataforma que vamos a usar
 ```js
 ionic platform add android
@@ -184,7 +190,29 @@ ionic resources --splash
 or
 ionic resources
 ```
+#####luego, generamos el archivo apk release
+```js
+ionic build android --release
+```
+#####creamos nuestro 'key' privada con la herramienta keytool
+```js
+keytool -genkey -v -keystore my-calculator-key.keystore -alias alias_calculator -keyalg RSA -keysize 2048 -validity 10000
+```
+#####firmamos el .apk con la herramienta jarsigner
+navegamos hasta donde se encuentra nuestro .apk
+```js
+jarsigner -verbose -sigalg SHA256withRSA -digestalg SHA1 -keystore my-calculator-key.keystore android-release-unsigned.apk alias_calculator
+```
+#####optimizamos el .apk
+```js
+zipalign -v 4 android-release-unsigned.apk Calculator.apk
+```
+#####Subir a Google Play
+Ingresar a la cuenta como developer
 http://developer.android.com/
-
+Paso para ver recursos
+```
+git checkout 08
+```
 https://appleid.apple.com/
 https://developer.apple.com/
